@@ -56,7 +56,6 @@ sudo cp hosts hosts.backup
 echo "127.0.0.1 pt-project.au" | sudo tee -a hosts > /dev/null
 
 cd /etc/nginx/sites-available
-# Remember to change root afterwards
 sudo tee pt-project.au.conf > /dev/null <<'end'
 server {
     listen 80;
