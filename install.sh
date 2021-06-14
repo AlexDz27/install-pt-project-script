@@ -10,11 +10,15 @@ git clone https://github.com/AlexDz27/pt-project.git pt-project/
 
 cd pt-project/
 
+printf "\n"
 echo "Installing database... Enter your MySQL root user password."
 mysql -u root -p < ../db-data/db-dump.sql
 echo "Database installed."
+printf "\n"
 
-printf "${YELLOW}\nEnter your sudo password to apply proper permissions for Laravel and to perform other operations:${NC}\n"
+printf "\n"
+printf "${YELLOW}Enter your sudo password to apply proper permissions for Laravel and to perform other operations:${NC}"
+printf "\n"
 sudo chgrp -R www-data storage/
 
 npm install
