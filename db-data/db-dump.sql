@@ -19,8 +19,8 @@
 -- Table structure for table `locations`
 --
 
-CREATE DATABASE `pt-project-tst` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `pt-project-tst`;
+CREATE DATABASE `pt-project` CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `pt-project`;
 
 DROP TABLE IF EXISTS `locations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

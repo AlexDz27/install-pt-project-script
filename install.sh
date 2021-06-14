@@ -31,13 +31,13 @@ APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:0n3lj54/HJoDXlKARYeUSvnYv6M7w80IsQtZpwS50aY=
 APP_DEBUG=true
-APP_URL=http://pt-project.tst.au
-APP_API_URL=http://pt-project.tst.au/api
+APP_URL=http://pt-project.au
+APP_API_URL=http://pt-project.au/api
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=pt-project-tst
+DB_DATABASE=pt-project
 DB_USERNAME=root
 DB_PASSWORD=root
 
@@ -53,15 +53,15 @@ cp .openstreemaps-icons/* public/css/images
 
 cd /etc
 sudo cp hosts hosts.backup
-echo "127.0.0.1 pt-project.tst.au" | sudo tee -a hosts > /dev/null
+echo "127.0.0.1 pt-project.au" | sudo tee -a hosts > /dev/null
 
 cd /etc/nginx/sites-available
 # Remember to change root afterwards
-sudo tee pt-project.tst.au.conf > /dev/null <<'end'
+sudo tee pt-project.au.conf > /dev/null <<'end'
 server {
     listen 80;
-    server_name pt-project.tst.au;
-    root /home/aliaksei/Projects/Yulia/install-pt-project-script/pt-project/public;
+    server_name pt-project.au;
+    root /home/Yulia/Projects/pt-project/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -93,9 +93,11 @@ server {
 end
 
 cd ../sites-enabled
-sudo ln -s ../sites-available/pt-project.tst.au.conf
+sudo ln -s ../sites-available/pt-project.au.conf
 
 sudo nginx -s reload
 
-printf "${GREEN}\nInstallation complete. \U2728${NC}\n"
-google-chrome http://pt-project.tst.au
+printf "\n"
+printf "${GREEN}Installation complete. \U2728${NC}"
+printf "\n"
+google-chrome http://pt-project.au
